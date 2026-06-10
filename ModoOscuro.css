@@ -1,0 +1,232 @@
+/* =========================
+   BOTÓN MODO OSCURO
+========================= */
+
+.header-acciones {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-modo {
+    background: white;
+    color: #2563eb;
+
+    border: none;
+    outline: none;
+
+    padding: 10px 18px;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-modo:hover {
+    background: #dbeafe;
+}
+
+
+/* =========================
+   MODO OSCURO GENERAL
+========================= */
+
+body.modo-oscuro {
+    background: #0f172a !important;
+    color: #e5e7eb !important;
+}
+
+
+/* HEADER */
+
+body.modo-oscuro header {
+    background: #111827 !important;
+    color: white !important;
+}
+
+body.modo-oscuro .header-centro h1 {
+    color: white !important;
+}
+
+body.modo-oscuro .btn-menu {
+    color: white !important;
+}
+
+body.modo-oscuro .logo-texto {
+    color: white !important;
+}
+
+body.modo-oscuro .logo-texto:hover {
+    background: #334155 !important;
+}
+
+body.modo-oscuro .campana {
+    color: white !important;
+}
+
+
+/* BOTONES HEADER */
+
+body.modo-oscuro .btn-header,
+body.modo-oscuro .btn-modo {
+    background: #334155 !important;
+    color: white !important;
+}
+
+body.modo-oscuro .btn-header:hover,
+body.modo-oscuro .btn-modo:hover {
+    background: #475569 !important;
+}
+
+
+/* NAV PESTAÑAS */
+
+body.modo-oscuro .nav-pestanas {
+    background: #1e293b !important;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.35) !important;
+}
+
+body.modo-oscuro .nav-pestanas a {
+    background: #334155 !important;
+    color: #e5e7eb !important;
+}
+
+body.modo-oscuro .nav-pestanas a:hover {
+    background: #2563eb !important;
+    color: white !important;
+}
+
+
+/* MENÚ LATERAL */
+
+body.modo-oscuro .menu-lateral {
+    background: #020617 !important;
+}
+
+body.modo-oscuro .menu-lateral a {
+    color: #e5e7eb !important;
+}
+
+body.modo-oscuro .menu-lateral a:hover {
+    background: #2563eb !important;
+    color: white !important;
+}
+
+body.modo-oscuro .overlay {
+    background: rgba(0,0,0,0.65) !important;
+}
+
+
+/* CONTENIDO */
+
+body.modo-oscuro .container {
+    background: transparent !important;
+}
+
+body.modo-oscuro h1,
+body.modo-oscuro h2,
+body.modo-oscuro h3 {
+    color: #60a5fa !important;
+}
+
+body.modo-oscuro p,
+body.modo-oscuro span,
+body.modo-oscuro strong,
+body.modo-oscuro label {
+    color: #e5e7eb !important;
+}
+
+
+/* BUSCADOR */
+
+body.modo-oscuro .search-box {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35) !important;
+}
+
+body.modo-oscuro .search-box input {
+    color: #e5e7eb !important;
+}
+
+body.modo-oscuro .search-box input::placeholder {
+    color: #94a3b8 !important;
+}
+
+body.modo-oscuro .search-box button {
+    background: #2563eb !important;
+}
+
+body.modo-oscuro .search-box button:hover {
+    background: #1d4ed8 !important;
+}
+
+
+/* TARJETAS DE ACTIVIDADES */
+
+body.modo-oscuro .card {
+    background: #1e293b !important;
+    color: #e5e7eb !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35) !important;
+}
+
+body.modo-oscuro .card-content h3 {
+    color: #60a5fa !important;
+}
+
+
+/* DETALLE DE ACTIVIDAD Y FORMULARIO */
+
+body.modo-oscuro .detail-box {
+    background: #1e293b !important;
+    color: #e5e7eb !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35) !important;
+}
+
+body.modo-oscuro #formulario input,
+body.modo-oscuro #formulario select {
+    background: #0f172a !important;
+    color: #e5e7eb !important;
+    border-color: #475569 !important;
+}
+
+body.modo-oscuro #formulario input::placeholder {
+    color: #94a3b8 !important;
+}
+
+
+/* BOTONES DEL DETALLE */
+
+body.modo-oscuro .btn-inscribir {
+    background: #2563eb !important;
+}
+
+body.modo-oscuro .btn-inscribir:hover {
+    background: #1d4ed8 !important;
+}
+
+body.modo-oscuro .btn-salir {
+    background: #475569 !important;
+}
+
+body.modo-oscuro .btn-salir:hover {
+    background: #334155 !important;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+    .header-acciones {
+        gap: 8px;
+    }
+
+    .btn-modo {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+}

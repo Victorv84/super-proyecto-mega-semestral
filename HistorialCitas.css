@@ -1,0 +1,444 @@
+/* =========================
+   HISTORIAL DE SESIONES
+========================= */
+
+.historial-container {
+    padding-top: 25px;
+}
+
+/* =========================
+   BOTÓN VOLVER
+========================= */
+
+.volver-link {
+    display: inline-block;
+
+    background: white;
+    color: #2563eb;
+
+    padding: 12px 22px;
+    border-radius: 7px;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+
+    margin-bottom: 25px;
+
+    border: none;
+    outline: none;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+
+    transition: 0.3s;
+}
+
+.volver-link:hover {
+    background: #eaf1ff;
+    transform: scale(1.03);
+    text-decoration: none;
+}
+
+.historial-header {
+    margin-bottom: 25px;
+}
+
+.historial-header h2 {
+    color: #2563eb;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.historial-header p {
+    color: #333;
+    font-size: 16px;
+}
+
+
+/* =========================
+   LISTADO DE SESIONES
+========================= */
+
+.historial-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.sesion-card {
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    border-left: 7px solid #2563eb;
+    padding: 22px 26px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.sesion-card h3 {
+    color: #111827;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.sesion-card p {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.sesion-card strong {
+    color: #000;
+    font-weight: bold;
+}
+
+
+/* =========================
+   SIN SESIONES
+========================= */
+
+.empty-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 7px solid #2563eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.empty-card h3 {
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.empty-card p {
+    color: #475569;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 900px) {
+
+    .historial-header h2 {
+        font-size: 26px;
+    }
+
+    .sesion-card {
+        padding: 20px;
+    }
+
+    .sesion-card p {
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   BOTÓN CERRAR SESIÓN
+========================= */
+
+.header-derecha form {
+    margin: 0;
+}
+
+.header-derecha .btn-header {
+    background: white !important;
+    color: #2563eb !important;
+
+    border: none !important;
+    outline: none !important;
+
+    padding: 12px 22px !important;
+    border-radius: 7px !important;
+
+    font-size: 16px !important;
+    font-weight: bold !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    cursor: pointer !important;
+    box-shadow: none !important;
+}
+
+.header-derecha .btn-header:hover {
+    background: #eaf1ff !important;
+}
+
+/* ========================= */
+/* MODO OSCURO - MI PERFIL */
+/* ========================= */
+
+html body.dark-mode {
+    background: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+html body.dark-mode .container,
+html body.dark-mode .perfil-container {
+    background: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+html body.dark-mode .volver-link {
+    background: #1e293b !important;
+    color: #93c5fd !important;
+    border: 1px solid #334155 !important;
+}
+
+html body.dark-mode .volver-link:hover {
+    background: #334155 !important;
+}
+
+html body.dark-mode .perfil-header h2 {
+    color: #60a5fa !important;
+}
+
+html body.dark-mode .perfil-header p {
+    color: #cbd5e1 !important;
+}
+
+html body.dark-mode .perfil-card-principal {
+    background: #1e293b !important;
+    border-left: 7px solid #3b82f6 !important;
+    color: #f8fafc !important;
+}
+
+html body.dark-mode .perfil-nombre h3 {
+    color: #f8fafc !important;
+}
+
+html body.dark-mode .perfil-subtitulo {
+    color: #cbd5e1 !important;
+}
+
+html body.dark-mode .estado-perfil {
+    background: #14532d !important;
+    color: #bbf7d0 !important;
+}
+
+html body.dark-mode .perfil-card {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+}
+
+html body.dark-mode .perfil-card span {
+    color: #93c5fd !important;
+}
+
+html body.dark-mode .perfil-card p {
+    color: #e5e7eb !important;
+}
+
+html body.dark-mode .perfil-card i {
+    background: #334155 !important;
+    color: #60a5fa !important;
+}
+
+html body.dark-mode .perfil-nota {
+    background: #1e293b !important;
+    border-left: 7px solid #3b82f6 !important;
+    color: #f8fafc !important;
+}
+
+html body.dark-mode .perfil-nota h3 {
+    color: #93c5fd !important;
+}
+
+html body.dark-mode .perfil-nota p {
+    color: #cbd5e1 !important;
+}
+
+html body.dark-mode .header-derecha .btn-header,
+html body.dark-mode .btn-modo {
+    background: #334155 !important;
+    color: #f8fafc !important;
+}
+
+html body.dark-mode .header-derecha .btn-header:hover,
+html body.dark-mode .btn-modo:hover {
+    background: #475569 !important;
+}
+
+/* ================================================= */
+/* FORZAR MODO OSCURO EN LAS CARDS DE MI PERFIL */
+/* ================================================= */
+
+/* Tarjeta principal */
+body.dark-mode .perfil-card-principal,
+body.modo-oscuro .perfil-card-principal,
+html.dark-mode body .perfil-card-principal,
+html.modo-oscuro body .perfil-card-principal {
+    background: #1e293b !important;
+    border-left: 7px solid #3b82f6 !important;
+    color: #f8fafc !important;
+}
+
+/* Título y subtítulo de tarjeta principal */
+body.dark-mode .perfil-nombre h3,
+body.modo-oscuro .perfil-nombre h3,
+html.dark-mode body .perfil-nombre h3,
+html.modo-oscuro body .perfil-nombre h3 {
+    color: #f8fafc !important;
+}
+
+body.dark-mode .perfil-subtitulo,
+body.modo-oscuro .perfil-subtitulo,
+html.dark-mode body .perfil-subtitulo,
+html.modo-oscuro body .perfil-subtitulo {
+    color: #cbd5e1 !important;
+}
+
+/* Cards pequeñas */
+body.dark-mode .perfil-card,
+body.modo-oscuro .perfil-card,
+html.dark-mode body .perfil-card,
+html.modo-oscuro body .perfil-card {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+}
+
+/* Texto dentro de las cards pequeñas */
+body.dark-mode .perfil-card span,
+body.modo-oscuro .perfil-card span,
+html.dark-mode body .perfil-card span,
+html.modo-oscuro body .perfil-card span {
+    color: #93c5fd !important;
+}
+
+body.dark-mode .perfil-card p,
+body.modo-oscuro .perfil-card p,
+html.dark-mode body .perfil-card p,
+html.modo-oscuro body .perfil-card p {
+    color: #e5e7eb !important;
+}
+
+/* Iconos */
+body.dark-mode .perfil-card i,
+body.modo-oscuro .perfil-card i,
+html.dark-mode body .perfil-card i,
+html.modo-oscuro body .perfil-card i {
+    background: #334155 !important;
+    color: #60a5fa !important;
+}
+
+/* Nota */
+body.dark-mode .perfil-nota,
+body.modo-oscuro .perfil-nota,
+html.dark-mode body .perfil-nota,
+html.modo-oscuro body .perfil-nota {
+    background: #1e293b !important;
+    border-left: 7px solid #3b82f6 !important;
+    color: #f8fafc !important;
+}
+
+body.dark-mode .perfil-nota h3,
+body.modo-oscuro .perfil-nota h3,
+html.dark-mode body .perfil-nota h3,
+html.modo-oscuro body .perfil-nota h3 {
+    color: #93c5fd !important;
+}
+
+body.dark-mode .perfil-nota p,
+body.modo-oscuro .perfil-nota p,
+html.dark-mode body .perfil-nota p,
+html.modo-oscuro body .perfil-nota p {
+    color: #cbd5e1 !important;
+}
+
+/* Botón volver */
+body.dark-mode .volver-link,
+body.modo-oscuro .volver-link,
+html.dark-mode body .volver-link,
+html.modo-oscuro body .volver-link {
+    background: #1e293b !important;
+    color: #93c5fd !important;
+    border: 1px solid #334155 !important;
+}
+
+body.dark-mode .volver-link:hover,
+body.modo-oscuro .volver-link:hover,
+html.dark-mode body .volver-link:hover,
+html.modo-oscuro body .volver-link:hover {
+    background: #334155 !important;
+}
+
+/* Estado activo en modo oscuro */
+body.dark-mode .estado-perfil,
+body.modo-oscuro .estado-perfil,
+html.dark-mode body .estado-perfil,
+html.modo-oscuro body .estado-perfil {
+    background: #166534 !important;
+    color: #dcfce7 !important;
+    border: 1px solid #22c55e !important;
+    font-weight: bold !important;
+}
+
+/* ========================= */
+/* MODO OSCURO - HISTORIAL */
+/* ========================= */
+
+body.dark-mode .historial-container,
+body.modo-oscuro .historial-container {
+    background: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+body.dark-mode .historial-header h2,
+body.modo-oscuro .historial-header h2 {
+    color: #60a5fa !important;
+}
+
+body.dark-mode .historial-header p,
+body.modo-oscuro .historial-header p {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode .historial-header strong,
+body.modo-oscuro .historial-header strong {
+    color: #ffffff !important;
+}
+
+/* Tarjetas de sesiones */
+body.dark-mode .sesion-card,
+body.modo-oscuro .sesion-card {
+    background: #1e293b !important;
+    border-left: 7px solid #3b82f6 !important;
+    color: #f8fafc !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35) !important;
+}
+
+body.dark-mode .sesion-card h3,
+body.modo-oscuro .sesion-card h3 {
+    color: #93c5fd !important;
+}
+
+body.dark-mode .sesion-card p,
+body.modo-oscuro .sesion-card p {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode .sesion-card strong,
+body.modo-oscuro .sesion-card strong {
+    color: #ffffff !important;
+}
+
+/* Tarjeta cuando no hay sesiones */
+body.dark-mode .empty-card,
+body.modo-oscuro .empty-card {
+    background: #1e293b !important;
+    border-left: 7px solid #3b82f6 !important;
+    color: #f8fafc !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35) !important;
+}
+
+body.dark-mode .empty-card h3,
+body.modo-oscuro .empty-card h3 {
+    color: #93c5fd !important;
+}
+
+body.dark-mode .empty-card p,
+body.modo-oscuro .empty-card p {
+    color: #cbd5e1 !important;
+}

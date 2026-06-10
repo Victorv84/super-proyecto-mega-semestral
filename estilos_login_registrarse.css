@@ -1,0 +1,199 @@
+/* ===== RESET ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===== BODY ===== */
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#eef2f7;
+
+    font-family:Arial, sans-serif;
+}
+
+/* ===== CONTENEDOR GENERAL ===== */
+
+.form-container{
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+/* ===== CARD ===== */
+
+.form-card{
+    background:white;
+
+    width:400px;
+
+    padding:45px 40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.10);
+
+    text-align:center;
+}
+
+/* ===== TITULO ===== */
+
+.form-card h1{
+    color:#2563eb;
+
+    font-size:50px;
+
+    margin-bottom:10px;
+}
+
+/* ===== SUBTITULO ===== */
+
+.form-card p{
+    color:#64748b;
+
+    margin-bottom:35px;
+
+    font-size:18px;
+}
+
+/* ===== FORM ===== */
+
+.form-card form{
+    margin-top:10px;
+}
+
+/* ===== INPUT GROUP ===== */
+
+.input-group{
+    text-align:left;
+
+    margin-bottom:20px;
+}
+
+/* ===== LABELS ===== */
+
+.input-group label{
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#1e293b;
+
+    font-weight:bold;
+
+    font-size:16px;
+}
+
+/* ===== INPUTS ===== */
+
+.input-group input{
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #cbd5e1;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:0.3s;
+}
+
+.input-group input:focus{
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* ===== BOTON ===== */
+
+.btn-primary{
+    width:100%;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.btn-primary:hover{
+    background:#1d4ed8;
+
+    transform:scale(1.02);
+}
+
+/* ===== LINKS ===== */
+
+.links{
+    margin-top:25px;
+
+    text-align:center;
+}
+
+.links a{
+    display:block;
+
+    margin-top:14px;
+
+    color:#2563eb;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    transition:0.3s;
+}
+
+.links a:hover{
+    color:#1d4ed8;
+}
+
+/* ===== MENSAJE ERROR ===== */
+
+.error{
+    background:#ffe5e5;
+
+    color:#b00020;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    font-size:14px;
+}
