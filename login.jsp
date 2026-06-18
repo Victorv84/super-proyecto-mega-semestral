@@ -76,7 +76,7 @@ color:gray;
     Contraseña: 123
 <br>
     Correo del Especialista: nombre@especialista.com <br>
-    Contraseña: 123sexo
+    Contraseña: 123
 <br>
     Correo del Admin: nombre@admin.com <br>
     Contraseña: 123
