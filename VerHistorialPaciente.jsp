@@ -26,6 +26,11 @@ String cedula = request.getParameter("cedula");
 <header class="topbar">
     <button class="menu-btn" type="button" onclick="toggleMenu()">☰</button>
     <h2>PSIREG</h2>
+    <div class="acciones-header">
+
+                <button type="button" class="btn-modo" id="btnModo" onclick="toggleModoOscuro()">
+                    🌙 Modo oscuro
+                </button>
     <div class="notification-container">
         <button class="notification-btn" type="button" onclick="toggleNotifications()">🔔</button>
 
@@ -59,6 +64,7 @@ String cedula = request.getParameter("cedula");
                 <div class="notification-item"><p>Paciente nuevo registrado en tu agenda.</p></div>
             </div>
         </div>
+    </div>
     </div>
 </header>
 
@@ -212,8 +218,42 @@ document.addEventListener("click", function(event) {
         panel.classList.remove("show");
     }
 });
+
+function aplicarTextoBotonModo() {
+    const btn = document.getElementById("btnModo");
+
+    if (!btn) return;
+
+    if (document.body.classList.contains("modo-oscuro")) {
+        btn.innerHTML = "☀️ Modo claro";
+    } else {
+        btn.innerHTML = "🌙 Modo oscuro";
+    }
+}
+
+function toggleModoOscuro() {
+    document.body.classList.toggle("modo-oscuro");
+
+    if (document.body.classList.contains("modo-oscuro")) {
+        localStorage.setItem("modoOscuro", "activo");
+    } else {
+        localStorage.setItem("modoOscuro", "inactivo");
+    }
+
+    aplicarTextoBotonModo();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const modoGuardado = localStorage.getItem("modoOscuro");
+
+    if (modoGuardado === "activo") {
+        document.body.classList.add("modo-oscuro");
+    }
+
+    aplicarTextoBotonModo();
+});
 </script>
-</script>
+
 
 </body>
 </html>
