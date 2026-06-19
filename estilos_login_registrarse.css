@@ -1,199 +1,284 @@
-/* ===== RESET ===== */
+/* ===== RESET GENERAL ===== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
+/* ===== BODY LOGIN ===== */
 
-body{
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:#eef2f7;
-
-    font-family:Arial, sans-serif;
+body.login-microsoft {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #1b1b1b;
+    overflow: hidden;
 }
 
-/* ===== CONTENEDOR GENERAL ===== */
+/* ===== CAPA OSCURA DEL FONDO ===== */
 
-.form-container{
-    width:100%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:20px;
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
 }
 
-/* ===== CARD ===== */
+/* ===== CONTENEDOR PRINCIPAL ===== */
 
-.form-card{
-    background:white;
+.login-wrapper {
+    position: relative;
+    z-index: 2;
 
-    width:400px;
+    min-height: 100vh;
 
-    padding:45px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    border-radius:20px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.10);
-
-    text-align:center;
+    padding: 20px;
 }
 
-/* ===== TITULO ===== */
+/* ===== CARD BLANCA TIPO MICROSOFT ===== */
 
-.form-card h1{
-    color:#2563eb;
+.ms-card {
+    width: 440px;
+    min-height: 335px;
 
-    font-size:50px;
+    background: #ffffff;
 
-    margin-bottom:10px;
+    padding: 44px 44px 36px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-/* ===== SUBTITULO ===== */
+/* ===== LOGO ===== */
 
-.form-card p{
-    color:#64748b;
+.ms-logo {
+    width: 42px;
+    height: 42px;
 
-    margin-bottom:35px;
-
-    font-size:18px;
+    margin-bottom: 18px;
 }
 
-/* ===== FORM ===== */
-
-.form-card form{
-    margin-top:10px;
+.ms-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-/* ===== INPUT GROUP ===== */
+/* ===== PASOS ===== */
 
-.input-group{
-    text-align:left;
-
-    margin-bottom:20px;
+.step {
+    display: none;
 }
 
-/* ===== LABELS ===== */
+.step.active {
+    display: block;
+}
 
-.input-group label{
-    display:block;
+/* ===== TITULOS ===== */
 
-    margin-bottom:8px;
+.ms-card h1 {
+    font-size: 24px;
+    font-weight: 600;
 
-    color:#1e293b;
+    margin-bottom: 22px;
 
-    font-weight:bold;
-
-    font-size:16px;
+    color: #1b1b1b;
 }
 
 /* ===== INPUTS ===== */
 
-.input-group input{
-    width:100%;
-
-    padding:15px;
-
-    border:1px solid #cbd5e1;
-
-    border-radius:12px;
-
-    font-size:15px;
-
-    outline:none;
-
-    transition:0.3s;
+.ms-input-box {
+    width: 100%;
+    margin-bottom: 14px;
 }
 
-.input-group input:focus{
-    border-color:#2563eb;
+.ms-input-box input {
+    width: 100%;
 
-    box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+    border: none;
+    border-bottom: 1px solid #0067b8;
+
+    padding: 8px 0 7px;
+
+    font-size: 15px;
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    outline: none;
+
+    color: #1b1b1b;
+    background: transparent;
 }
 
-/* ===== BOTON ===== */
-
-.btn-primary{
-    width:100%;
-
-    padding:15px;
-
-    margin-top:15px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#2563eb;
-
-    color:white;
-
-    font-size:17px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:0.3s;
+.ms-input-box input::placeholder {
+    color: #666666;
 }
 
-.btn-primary:hover{
-    background:#1d4ed8;
-
-    transform:scale(1.02);
+.ms-input-box input:focus {
+    border-bottom: 2px solid #0067b8;
 }
 
 /* ===== LINKS ===== */
 
-.links{
-    margin-top:25px;
-
-    text-align:center;
+.ms-links {
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
-.links a{
-    display:block;
-
-    margin-top:14px;
-
-    color:#2563eb;
-
-    font-weight:bold;
-
-    text-decoration:none;
-
-    font-size:16px;
-
-    transition:0.3s;
+.ms-links a {
+    font-size: 13px;
+    color: #0067b8;
+    text-decoration: none;
 }
 
-.links a:hover{
-    color:#1d4ed8;
+.ms-links a:hover {
+    text-decoration: underline;
 }
 
-/* ===== MENSAJE ERROR ===== */
+/* ===== BOTONES ===== */
 
-.error{
-    background:#ffe5e5;
+.ms-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
-    color:#b00020;
+    gap: 8px;
+}
 
-    padding:12px;
+.ms-actions.right {
+    justify-content: flex-end;
+    margin-top: 24px;
+}
 
-    border-radius:10px;
+.btn-primary,
+.btn-secondary {
+    min-width: 108px;
+    height: 32px;
 
-    margin-bottom:20px;
+    padding: 0 16px;
 
-    text-align:center;
+    border: none;
 
-    font-size:14px;
+    font-size: 14px;
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    background: #0067b8;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #005da6;
+}
+
+.btn-secondary {
+    background: #e6e6e6;
+    color: #000000;
+}
+
+.btn-secondary:hover {
+    background: #d6d6d6;
+}
+
+/* ===== LINEA DEL CORREO EN PASO 2 ===== */
+
+.ms-user-line {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+    color: #1b1b1b;
+}
+
+.back-arrow {
+    border: none;
+    background: transparent;
+
+    font-size: 22px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    color: #333333;
+}
+
+.back-arrow:hover {
+    color: #000000;
+}
+
+/* ===== ERROR ===== */
+
+.ms-error {
+    background: #fde7e9;
+    color: #a80000;
+
+    font-size: 13px;
+
+    padding: 10px 12px;
+
+    margin-bottom: 18px;
+
+    border-left: 3px solid #a80000;
+}
+
+/* ===== FOOTER ===== */
+
+.ms-footer {
+    position: fixed;
+    right: 26px;
+    bottom: 18px;
+
+    z-index: 3;
+
+    display: flex;
+    gap: 24px;
+}
+
+.ms-footer a {
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.ms-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px) {
+
+    .ms-card {
+        width: 100%;
+        max-width: 440px;
+
+        padding: 36px 28px 30px;
+    }
+
+    .ms-footer {
+        right: 16px;
+        bottom: 12px;
+
+        gap: 12px;
+    }
 }
