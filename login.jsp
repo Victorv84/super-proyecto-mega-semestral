@@ -70,7 +70,7 @@ font-size:14px;
 color:gray;
 ">
     Correo del Cliente: nombre@cliente.com <br>
-    Contraseña: 123 pp
+    Contraseña: 123
     <br>
     Correo de Secretaria: nombre@secretaria.com <br>
     Contraseña: 123
