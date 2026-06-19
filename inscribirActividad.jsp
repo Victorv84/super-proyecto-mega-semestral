@@ -70,7 +70,6 @@ if(actividad == null){
     <a href="MisionVision.jsp">Misión y visión</a>
     <a href="Personal.jsp">Especialistas</a>
     <a href="Contacto.jsp">Contacto</a>
-    <a href="SoporteTecnico.jsp">Soporte técnico</a>
 </nav>
 
 <aside id="menuLateral" class="menu-lateral">
@@ -141,22 +140,7 @@ if(actividad == null){
                     <label>Dirección</label>
                     <input type="text" name="direccion" placeholder="Ingrese su dirección" required>
                 </div>
-
-                <div class="input-group">
-                    <label>Centro / Sede de Atención</label>
-                    <select name="sede" required>
-                        <option value="">Seleccione una sede</option>
-                        <option value="UTP Central">UTP Central</option>
-                        <option value="Azuero">Azuero</option>
-                        <option value="Bocas del Toro">Bocas del Toro</option>
-                        <option value="Chiriquí">Chiriquí</option>
-                        <option value="Coclé">Coclé</option>
-                        <option value="Colón">Colón</option>
-                        <option value="Panamá Oeste">Panamá Oeste</option>
-                        <option value="Veraguas">Veraguas</option>
-                    </select>
-                </div>
-
+                
                 <div class="buttons">
                     <button type="submit" class="btn-inscribir">Continuar</button>
                     <button type="button" class="btn-salir" onclick="cancelarInscripcion()">Cancelar</button>

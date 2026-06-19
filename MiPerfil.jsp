@@ -164,7 +164,6 @@ if (miPerfil == null) {
     <a href="MisionVision.jsp">Misión y visión</a>
     <a href="Personal.jsp">Especialistas</a>
     <a href="Contacto.jsp">Contacto</a>
-    <a href="SoporteTecnico.jsp">Soporte técnico</a>
 
 </nav>
 
