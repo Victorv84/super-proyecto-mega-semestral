@@ -56,6 +56,12 @@
     <h1 class="titulo-header">PSIREG</h1>
 
     <div class="header-derecha">
+
+
+    <button type="button" class="btn-modo" id="btnModo" onclick="toggleModoOscuro()">
+        🌙 Modo oscuro
+    </button>
+    
         <button class="btn-campana" onclick="toggleNotificaciones(event)">
             <i class="fa-solid fa-bell"></i>
             <span class="punto-notificacion"></span>
@@ -103,19 +109,9 @@
         Inicio
     </a>
 
-    <a href="GestionPacientes.jsp">
-        <i class="fa-solid fa-users"></i>
-        Gestionar pacientes
-    </a>
-
-    <a href="AgendarCita.jsp">
-        <i class="fa-solid fa-calendar-plus"></i>
-        Agendar cita
-    </a>
-
     <a href="CitasSecretaria.jsp">
-        <i class="fa-solid fa-calendar-check"></i>
-        Ver citas
+        <i class="fa-solid fa-solidLarge fa-calendar-days">‌</i>
+        Ver Calendario 
     </a>
 
     <a href="EspecialistasSecretaria.jsp">
@@ -123,9 +119,9 @@
         Especialistas
     </a>
 
-    <a href="Contacto.jsp">
-        <i class="fa-solid fa-envelope"></i>
-        Contacto
+    <a href="gestionPacientes.jsp">
+        <i class="fa-solid fa-solidLarge fa-user-large">‌</i>
+        Pacientes
     </a>
 
     <a href="logout.jsp" class="cerrar-sesion">
@@ -137,18 +133,7 @@
 <div class="overlay" id="overlay" onclick="cerrarMenu()"></div>
 
 <main class="contenido-principal" id="contenidoPrincipal">
-
-    <section class="bienvenida">
-        <div>
-            <h2>Panel de Secretaria</h2>
-            <p>Bienvenida, <strong><%= usuario %></strong>. Desde aquí puedes gestionar citas, pacientes y especialistas.</p>
-        </div>
-
-        <a href="AgendarCita.jsp" class="btn-principal">
-            <i class="fa-solid fa-calendar-plus"></i>
-            Nueva cita
-        </a>
-    </section>
+     
 
     <section class="resumen">
         <div class="card-resumen">
@@ -181,34 +166,20 @@
             </div>
         </div>
 
-        <div class="card-resumen">
-            <div class="icono-resumen morado">
-                <i class="fa-solid fa-users"></i>
-            </div>
-            <div>
-                <h3>3</h3>
-                <p>Pacientes recientes</p>
-            </div>
-        </div>
     </section>
-
+    
     <section class="acciones-rapidas">
         <h2>Acciones rápidas</h2>
 
         <div class="grid-acciones">
             <a href="AgendarCita.jsp" class="accion">
-                <i class="fa-solid fa-calendar-plus"></i>
-                <span>Agendar cita</span>
+                <i class="fa-solid fa-solidLarge fa-calendar-days">‌</i>
+                <span>Calendario de Especialistas</span>
             </a>
 
             <a href="GestionPacientes.jsp" class="accion">
                 <i class="fa-solid fa-user-plus"></i>
                 <span>Registrar paciente</span>
-            </a>
-
-            <a href="CitasSecretaria.jsp" class="accion">
-                <i class="fa-solid fa-pen-to-square"></i>
-                <span>Modificar cita</span>
             </a>
 
             <a href="EspecialistasSecretaria.jsp" class="accion">
@@ -291,7 +262,7 @@
     <section class="panel pacientes-panel">
         <div class="encabezado-panel">
             <h2>Pacientes recientes</h2>
-            <a href="GestionPacientes.jsp">Gestionar pacientes</a>
+            <a href="GestionPacientes.jsp">Ver todos los pacientes</a>
         </div>
 
         <div class="grid-pacientes">
