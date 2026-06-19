@@ -5,7 +5,8 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
+html,
+body {
     min-height: 100%;
 }
 
@@ -34,19 +35,20 @@ body {
     justify-content: space-between;
 
     padding: 0 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .btn-menu,
 .btn-campana,
-.btn-casa {
+.btn-casa,
+.btn-modo {
     width: 42px;
     height: 42px;
 
     border: none;
     border-radius: 10px;
 
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     color: white;
 
     display: flex;
@@ -57,13 +59,15 @@ body {
     cursor: pointer;
     text-decoration: none;
 
-    transition: 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn-menu:hover,
 .btn-campana:hover,
-.btn-casa:hover {
-    background: rgba(255,255,255,0.28);
+.btn-casa:hover,
+.btn-modo:hover{
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
 }
 
 .titulo-header {
@@ -112,7 +116,7 @@ body {
     color: #1f2937;
 
     border-radius: 14px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
     padding: 18px;
 
@@ -142,7 +146,7 @@ body {
     margin-top: 4px;
 }
 
-/* MENU LATERAL */
+/* MENÚ LATERAL */
 
 .menu-lateral {
     width: 260px;
@@ -156,11 +160,10 @@ body {
     z-index: 900;
 
     padding: 20px 15px;
-
-    box-shadow: 3px 0 15px rgba(0,0,0,0.12);
-
-    transition: left 0.3s ease;
     overflow-y: auto;
+
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.12);
+    transition: left 0.3s ease;
 }
 
 body.menu-abierto .menu-lateral {
@@ -193,6 +196,7 @@ body.menu-abierto .menu-lateral {
     justify-content: center;
 
     font-size: 22px;
+    flex-shrink: 0;
 }
 
 .perfil-menu h3 {
@@ -203,6 +207,7 @@ body.menu-abierto .menu-lateral {
 .perfil-menu p {
     font-size: 13px;
     color: #6b7280;
+    word-break: break-word;
 }
 
 .menu-lateral a {
@@ -218,7 +223,7 @@ body.menu-abierto .menu-lateral {
 
     border-radius: 12px;
 
-    transition: 0.3s;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .menu-lateral a:hover,
@@ -237,8 +242,12 @@ body.menu-abierto .menu-lateral {
     color: white;
 }
 
+/* OVERLAY TRANSPARENTE
+   Sirve para cerrar el menú al tocar fuera, pero no oscurece el contenido. */
+
 .overlay {
     display: none;
+    background: transparent;
 }
 
 body.menu-abierto .overlay {
@@ -250,7 +259,11 @@ body.menu-abierto .overlay {
     right: 0;
     bottom: 0;
 
-    background: rgba(0,0,0,0.25);
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
     z-index: 800;
 }
 
@@ -258,61 +271,18 @@ body.menu-abierto .overlay {
 
 .contenido-principal {
     padding: 30px;
+    margin-left: 0;
+
     transition: margin-left 0.3s ease;
+
+    filter: none;
+    opacity: 1;
 }
 
 body.menu-abierto .contenido-principal {
     margin-left: 260px;
-}
-
-.bienvenida {
-    background: linear-gradient(135deg, #1e40af, #1d4ed8);
-    color: white;
-
-    padding: 28px;
-
-    border-radius: 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 20px;
-
-    box-shadow: 0 8px 20px rgba(30,64,175,0.25);
-}
-
-.bienvenida h2 {
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-.bienvenida p {
-    font-size: 16px;
-    opacity: 0.95;
-}
-
-.btn-principal {
-    background: white;
-    color: #1e40af;
-
-    padding: 13px 18px;
-
-    border-radius: 12px;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    transition: 0.3s;
-}
-
-.btn-principal:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+    filter: none;
+    opacity: 1;
 }
 
 /* RESUMEN */
@@ -321,7 +291,6 @@ body.menu-abierto .contenido-principal {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 18px;
-
     margin-top: 25px;
 }
 
@@ -329,14 +298,13 @@ body.menu-abierto .contenido-principal {
     background: white;
 
     padding: 20px;
-
     border-radius: 18px;
 
     display: flex;
     align-items: center;
     gap: 15px;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .card-resumen h3 {
@@ -361,6 +329,7 @@ body.menu-abierto .contenido-principal {
 
     color: white;
     font-size: 24px;
+    flex-shrink: 0;
 }
 
 .azul {
@@ -402,7 +371,6 @@ body.menu-abierto .contenido-principal {
     color: #1f2937;
 
     padding: 24px;
-
     border-radius: 18px;
 
     text-decoration: none;
@@ -412,9 +380,9 @@ body.menu-abierto .contenido-principal {
     align-items: center;
     gap: 12px;
 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .accion i {
@@ -424,11 +392,12 @@ body.menu-abierto .contenido-principal {
 
 .accion span {
     font-weight: bold;
+    text-align: center;
 }
 
 .accion:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.14);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
 }
 
 /* PANELES */
@@ -437,25 +406,21 @@ body.menu-abierto .contenido-principal {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 22px;
-
     margin-top: 30px;
 }
 
 .panel {
     background: white;
-
     padding: 22px;
-
     border-radius: 20px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .encabezado-panel {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    gap: 12px;
     margin-bottom: 15px;
 }
 
@@ -463,6 +428,7 @@ body.menu-abierto .contenido-principal {
     color: #1e40af;
     text-decoration: none;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .encabezado-panel a:hover {
@@ -497,22 +463,52 @@ th {
     color: #374151;
 }
 
+/* ESTADOS */
+
 .estado {
-    padding: 6px 10px;
-    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 12px;
+    border-radius: 999px;
+
     font-size: 13px;
     font-weight: bold;
+    line-height: 1;
+
+    border: none;
+    outline: none;
+    text-decoration: none;
+    user-select: none;
+    white-space: nowrap;
 }
 
-.activo,
-.disponible {
+.estado.activo,
+.estado.disponible {
     background: #dcfce7;
     color: #166534;
 }
 
-.pendiente {
+.estado.pendiente {
     background: #fef3c7;
     color: #92400e;
+}
+
+.estado.en-cita {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.estado.reprogramada {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.estado.cancelada,
+.estado.inactivo {
+    background: #fee2e2;
+    color: #991b1b;
 }
 
 .btn-tabla {
@@ -520,13 +516,12 @@ th {
     color: white;
 
     padding: 7px 12px;
-
     border-radius: 8px;
 
     text-decoration: none;
     font-size: 13px;
 
-    transition: 0.3s;
+    transition: background 0.3s ease;
 }
 
 .btn-tabla:hover {
@@ -547,7 +542,6 @@ th {
     gap: 12px;
 
     padding: 14px;
-
     background: #f8fafc;
     border-radius: 14px;
 }
@@ -564,6 +558,8 @@ th {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
 }
 
 .actividad h3 {
@@ -585,8 +581,7 @@ th {
 
 /* ESPECIALISTAS */
 
-.especialistas-panel,
-.sistema-panel {
+.especialistas-panel {
     margin-top: 30px;
 }
 
@@ -598,24 +593,21 @@ th {
 
 .card-especialista {
     background: #f8fafc;
-
     padding: 20px;
-
     border-radius: 18px;
-
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-especialista:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
 }
 
 .especialista-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    gap: 12px;
     margin-bottom: 14px;
 }
 
@@ -633,6 +625,7 @@ th {
     justify-content: center;
 
     font-size: 22px;
+    flex-shrink: 0;
 }
 
 .card-especialista h3 {
@@ -654,76 +647,27 @@ th {
 .botones-card {
     display: flex;
     gap: 10px;
-
     margin-top: 15px;
 }
 
 .botones-card a {
     flex: 1;
-
     text-align: center;
 
     background: #1e40af;
     color: white;
 
     padding: 9px;
-
     border-radius: 10px;
 
     text-decoration: none;
     font-size: 14px;
 
-    transition: 0.3s;
+    transition: background 0.3s ease;
 }
 
 .botones-card a:hover {
     background: #1d4ed8;
-}
-
-/* SISTEMA */
-
-.grid-sistema {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-}
-
-.item-sistema {
-    background: #f8fafc;
-
-    padding: 18px;
-
-    border-radius: 16px;
-
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.item-sistema i {
-    width: 48px;
-    height: 48px;
-
-    background: #1e40af;
-    color: white;
-
-    border-radius: 14px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 22px;
-}
-
-.item-sistema h3 {
-    color: #1f2937;
-    margin-bottom: 4px;
-}
-
-.item-sistema p {
-    color: #6b7280;
-    font-size: 14px;
 }
 
 /* FOOTER */
@@ -734,7 +678,8 @@ footer {
     color: #6b7280;
 }
 
-/* MODO OSCURO */
+/* MODO OSCURO SOLO PARA ADMIN
+   No depende de ModoOscuro.css. */
 
 body.dark-mode,
 body.modo-oscuro {
@@ -764,8 +709,6 @@ body.dark-mode .actividad,
 body.modo-oscuro .actividad,
 body.dark-mode .card-especialista,
 body.modo-oscuro .card-especialista,
-body.dark-mode .item-sistema,
-body.modo-oscuro .item-sistema,
 body.dark-mode thead,
 body.modo-oscuro thead {
     background: #273449;
@@ -782,9 +725,7 @@ body.modo-oscuro .actividad h3,
 body.dark-mode .card-especialista h3,
 body.modo-oscuro .card-especialista h3,
 body.dark-mode .card-resumen h3,
-body.modo-oscuro .card-resumen h3,
-body.dark-mode .item-sistema h3,
-body.modo-oscuro .item-sistema h3 {
+body.modo-oscuro .card-resumen h3 {
     color: #f9fafb;
 }
 
@@ -815,12 +756,41 @@ body.modo-oscuro table td {
     border-bottom: 1px solid #374151;
 }
 
+body.dark-mode .estado.activo,
+body.dark-mode .estado.disponible,
+body.modo-oscuro .estado.activo,
+body.modo-oscuro .estado.disponible {
+    background: #bbf7d0;
+    color: #14532d;
+}
+
+body.dark-mode .estado.pendiente,
+body.modo-oscuro .estado.pendiente {
+    background: #fef08a;
+    color: #713f12;
+}
+
+body.dark-mode .estado.en-cita,
+body.dark-mode .estado.reprogramada,
+body.modo-oscuro .estado.en-cita,
+body.modo-oscuro .estado.reprogramada {
+    background: #bfdbfe;
+    color: #1e3a8a;
+}
+
+body.dark-mode .estado.cancelada,
+body.dark-mode .estado.inactivo,
+body.modo-oscuro .estado.cancelada,
+body.modo-oscuro .estado.inactivo {
+    background: #fecaca;
+    color: #7f1d1d;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 1100px) {
     .resumen,
-    .grid-acciones,
-    .grid-sistema {
+    .grid-acciones {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -846,15 +816,9 @@ body.modo-oscuro table td {
         padding: 20px;
     }
 
-    .bienvenida {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .resumen,
     .grid-acciones,
-    .grid-especialistas,
-    .grid-sistema {
+    .grid-especialistas {
         grid-template-columns: 1fr;
     }
 
@@ -866,4 +830,75 @@ body.modo-oscuro table td {
         width: calc(100% - 40px);
         right: 20px;
     }
+}
+
+/* BOTÓN MODO OSCURO */
+
+.btn-modo {
+    position: relative;
+}
+
+body.dark-mode .btn-modo {
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+}
+
+body.dark-mode .overlay,
+body.modo-oscuro .overlay,
+body.dark-mode.menu-abierto .overlay,
+body.modo-oscuro.menu-abierto .overlay {
+    background: transparent !important;
+}
+
+/* BOTÓN MODO OSCURO / CLARO */
+
+.btn-modo-tema {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-top: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    background: #ffffff;
+    color: #2563eb;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.btn-modo-tema:hover {
+    transform: translateY(-1px);
+}
+
+.icono-modo {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.texto-modo {
+    line-height: 1;
+}
+
+/* CUANDO ESTÁ EL MODO OSCURO ACTIVO */
+body.dark-mode .btn-modo-tema,
+body.modo-oscuro .btn-modo-tema {
+    background: #2b3b55;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+/* OPCIONAL: si quieres que el botón combine mejor dentro del menú oscuro */
+body.dark-mode .menu-lateral .btn-modo-tema,
+body.modo-oscuro .menu-lateral .btn-modo-tema {
+    background: #2b3b55;
+    color: #ffffff;
 }

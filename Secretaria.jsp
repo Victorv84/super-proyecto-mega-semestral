@@ -104,22 +104,22 @@
         </div>
     </div>
 
-    <a href="Secretaria.jsp" class="activo">
+    <a href="#" class="activo">
         <i class="fa-solid fa-house"></i>
         Inicio
     </a>
 
-    <a href="CitasSecretaria.jsp">
+    <a href="#">
         <i class="fa-solid fa-solidLarge fa-calendar-days">‌</i>
         Ver Calendario 
     </a>
 
-    <a href="EspecialistasSecretaria.jsp">
+    <a href="#">
         <i class="fa-solid fa-user-doctor"></i>
         Especialistas
     </a>
 
-    <a href="gestionPacientes.jsp">
+    <a href="#">
         <i class="fa-solid fa-solidLarge fa-user-large">‌</i>
         Pacientes
     </a>
@@ -172,17 +172,17 @@
         <h2>Acciones rápidas</h2>
 
         <div class="grid-acciones">
-            <a href="AgendarCita.jsp" class="accion">
+            <a href="#" class="accion">
                 <i class="fa-solid fa-solidLarge fa-calendar-days">‌</i>
                 <span>Calendario de Especialistas</span>
             </a>
 
-            <a href="GestionPacientes.jsp" class="accion">
+            <a href="#" class="accion">
                 <i class="fa-solid fa-user-plus"></i>
                 <span>Registrar paciente</span>
             </a>
 
-            <a href="EspecialistasSecretaria.jsp" class="accion">
+            <a href="#" class="accion">
                 <i class="fa-solid fa-user-doctor"></i>
                 <span>Ver especialistas</span>
             </a>
@@ -194,7 +194,7 @@
         <div class="panel">
             <div class="encabezado-panel">
                 <h2>Citas de hoy</h2>
-                <a href="CitasSecretaria.jsp">Ver todas</a>
+                <a href="#">Ver todas</a>
             </div>
 
             <div class="tabla-contenedor">
@@ -235,7 +235,7 @@
         <div class="panel">
             <div class="encabezado-panel">
                 <h2>Especialistas</h2>
-                <a href="EspecialistasSecretaria.jsp">Ver todos</a>
+                <a href="#">Ver todos</a>
             </div>
 
             <div class="lista-cards">
@@ -262,7 +262,7 @@
     <section class="panel pacientes-panel">
         <div class="encabezado-panel">
             <h2>Pacientes recientes</h2>
-            <a href="GestionPacientes.jsp">Ver todos los pacientes</a>
+            <a href="#">Ver todos los pacientes</a>
         </div>
 
         <div class="grid-pacientes">
