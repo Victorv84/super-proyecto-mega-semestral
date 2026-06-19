@@ -47,10 +47,6 @@ String error = request.getParameter("error");
 
             <div class="links">
 
-                <a href="registrarse.jsp">
-                    ¿Eres un cliente nuevo? Regístrate
-                </a>
-
                 <a href="Cliente.jsp">
                     Regresar al inicio
                 </a>

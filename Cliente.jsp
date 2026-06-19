@@ -67,7 +67,6 @@ boolean sesionIniciada = usuario != null && "cliente".equals(rol);
     <% if(!sesionIniciada){ %>
 
         <a href="login.jsp" class="btn-header">Iniciar sesión</a>
-        <a href="registrarse.jsp" class="btn-header">Registrarse</a>
 
     <% } else { %>
 
