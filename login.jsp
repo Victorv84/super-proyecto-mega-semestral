@@ -13,7 +13,7 @@
 </head>
 
 <body class="login-microsoft" style="
-    background-image: url('Universidad.jfif');
+    background-image: url('img/Universidad.jfif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,7 +27,7 @@
         <section class="ms-card">
 
             <div class="ms-logo">
-                <img src="logo utp.jpg" alt="Logo UTP">
+                <img src="img/logo utp.jpg" alt="Logo UTP">
             </div>
 
             <% if (error != null) { %>
