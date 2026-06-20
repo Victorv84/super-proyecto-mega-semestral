@@ -43,7 +43,7 @@ response.sendRedirect("Especialista/Especialista.jsp");
     session.setAttribute("usuario", correo);
     session.setAttribute("rol", "admin");
 
-    response.sendRedirect("Admin.jsp");
+    response.sendRedirect("Admin/Admin.jsp");
 
 }else{
 

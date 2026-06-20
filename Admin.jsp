@@ -9,7 +9,7 @@
         ("admin".equalsIgnoreCase(rol) || "administrador".equalsIgnoreCase(rol));
 
     if (!sesionIniciada) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("../login.jsp");
         return;
     }
 
@@ -47,7 +47,7 @@
 
     <!-- CSS propio del administrador -->
     <link rel="stylesheet" href="estilos_Admin.css">
-    <link rel="stylesheet" href="ModoOscuro.css">
+    <link rel="stylesheet" href="../ModoOscuro.css">
 </head>
 
 <body>
@@ -135,7 +135,7 @@
         Configuración
     </a>
 
-    <a href="logout.jsp" class="cerrar-sesion">
+    <a href="../logout.jsp" class="cerrar-sesion">
         <i class="fa-solid fa-right-from-bracket"></i>
         Cerrar sesión
     </a>
@@ -251,7 +251,7 @@
                                 </span>
                             </td>
                             <td>
-                                <a href="EditarUsuario.jsp?id=<%= i + 1 %>" class="btn-tabla">
+                                <a href="#?id=<%= i + 1 %>" class="btn-tabla">
                                     Editar
                                 </a>
                             </td>
