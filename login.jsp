@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="ms-actions">
-                        <a href="Cliente.jsp" class="btn-secondary">Atrás</a>
+                        <a href="Cliente/Cliente.jsp" class="btn-secondary">Atrás</a>
 
                         <button type="button" class="btn-primary" onclick="siguientePaso()">
                             Siguiente

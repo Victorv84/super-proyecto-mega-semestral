@@ -17,7 +17,7 @@ if(correo.endsWith("@cliente.com") && password.equals("123")){
     session.setAttribute("usuario", correo);
     session.setAttribute("rol", "cliente");
 
-    response.sendRedirect("Cliente.jsp");
+    response.sendRedirect("Cliente/Cliente.jsp");
 
 }else if(correo.endsWith("@secretaria.com") && password.equals("123")){
 
