@@ -36,7 +36,7 @@ if (correo.equals("perez@especialista.com")) {
     session.setAttribute("calendar_id", "CALENDARIO_ANA");
 }
 
-response.sendRedirect("Especialista.jsp");
+response.sendRedirect("Especialista/Especialista.jsp");
 
 }else if(correo.endsWith("@admin.com") && password.equals("123")){
 
