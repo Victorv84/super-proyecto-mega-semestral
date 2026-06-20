@@ -47,7 +47,7 @@
 
     <!-- CSS propio del administrador -->
     <link rel="stylesheet" href="estilos_Admin.css">
-    <link rel="stylesheet" href="ModoOscuro.css">
+    <link rel="stylesheet" href="../ModoOscuro.css">
 </head>
 
 <body>
@@ -207,7 +207,7 @@
                 <span>Ver reportes</span>
             </a>
 
-            <a href="#" class="accion">
+            <a href="Administrar actividades.jsp" class="accion">
                 <i class="fa-solid fa-circle-plus"></i>
                 <span>Agregar actividades</span>
             </a>

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrar Actividades</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="Administrar actividades.css">
 
 
 
@@ -17,7 +17,7 @@
 
     <header>
 
-        <a href="#" class="regresar">← Regresar al Menú Principal</a>
+        <a href="Admin.jsp" class="regresar">← Regresar al Menú Principal</a>
 
         <h1>Administrar Actividades</h1>
 
