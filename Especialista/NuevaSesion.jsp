@@ -8,7 +8,7 @@ String usuario = (String) session.getAttribute("usuario");
 String rol = (String) session.getAttribute("rol");
 
 if (usuario == null || !"especialista".equals(rol)) {
-    response.sendRedirect("login.jsp");
+    response.sendRedirect("../login.jsp");
     return;
 }
 
@@ -109,7 +109,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
             <a href="Paciente.jsp">📁 Expediente</a>
             <a href="NuevaSesion.jsp" class="active">📝 Nueva sesión</a>
 
-            <form action="logout.jsp" method="post">
+            <form action="../logout.jsp" method="post">
                 <button class="salir-menu" type="submit">🚪 Salir</button>
             </form>
         </nav>

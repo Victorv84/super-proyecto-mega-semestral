@@ -5,7 +5,7 @@ String usuario = (String) session.getAttribute("usuario");
 String rol = (String) session.getAttribute("rol");
 
 if (usuario == null || !"especialista".equals(rol)) {
-    response.sendRedirect("login.jsp");
+    response.sendRedirect("../login.jsp");
     return;
 }
 
@@ -79,7 +79,7 @@ String cedula = request.getParameter("cedula");
         <a href="NuevaSesion.jsp">📝 Nueva sesión</a>
         
 
-        <form action="logout.jsp" method="post">
+        <form action="../logout.jsp" method="post">
             <button class="salir-menu" type="submit">🚪 Cerrar sesión</button>
         </form>
     </aside>
