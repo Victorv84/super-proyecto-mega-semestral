@@ -68,8 +68,7 @@
     <% if(!sesionIniciada){ %>
 
         <a href="../login.jsp" class="btn-header">Iniciar sesión</a>
-        <a href="registrarse.jsp" class="btn-header">Registrarse</a>
-
+        
     <% } else { %>
 
         <a href="../logout.jsp" class="btn-header">Cerrar sesión</a>
@@ -107,7 +106,7 @@
         <a href="MisionVision.jsp">Misión y visión</a>
         <a href="Personal.jsp">Especialistas</a>
         <a href="Contacto.jsp">Contacto</a>
-        <a href="SoporteTecnico.jsp">Soporte técnico</a>
+        
 
     <% } %>
 
