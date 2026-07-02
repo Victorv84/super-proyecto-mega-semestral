@@ -13,15 +13,9 @@
 
     // Datos temporales mientras conectas con base de datos
     String[][] citasHoy = {
-        {"08:00 AM", "Ana Martínez", "Dra. Laura Gómez", "Confirmada"},
-        {"10:30 AM", "Carlos Pérez", "Dr. Miguel Ríos", "Pendiente"},
-        {"02:00 PM", "María González", "Dra. Laura Gómez", "Reprogramada"}
-    };
-
-    String[][] pacientesRecientes = {
-        {"Ana Martínez", "8-888-1111", "Estudiante", "Activo"},
-        {"Carlos Pérez", "8-777-2222", "Docente", "Activo"},
-        {"María González", "8-666-3333", "Administrativo", "Activo"}
+        {"08:00 AM", "09:00 AM", "Ana Martínez", "Dra. Laura Gómez", "Confirmada"},
+        {"10:30 AM", "11:30 AM", "Carlos Pérez", "Dr. Miguel Ríos", "Pendiente"},
+        {"02:00 PM", "03:00 PM", "María González", "Dra. Laura Gómez", "Reprogramada"}
     };
 
     String[][] especialistas = {
@@ -29,6 +23,21 @@
         {"Dr. Miguel Ríos", "Orientación vocacional", "En cita"},
         {"Dra. Sofía Herrera", "Terapia familiar", "Disponible"}
     };
+%>
+
+<%!
+    public String generarIdPaciente(String nombre) {
+        if (nombre == null) return "";
+
+        return nombre.toLowerCase()
+                .replace("á", "a")
+                .replace("é", "e")
+                .replace("í", "i")
+                .replace("ó", "o")
+                .replace("ú", "u")
+                .replace("ñ", "n")
+                .replaceAll("\\s+", "-");
+    }
 %>
 
 <!DOCTYPE html>
@@ -57,11 +66,10 @@
 
     <div class="header-derecha">
 
+        <button type="button" class="btn-modo" id="btnModo" onclick="toggleModoOscuro()">
+            🌙 Modo oscuro
+        </button>
 
-    <button type="button" class="btn-modo" id="btnModo" onclick="toggleModoOscuro()">
-        🌙 Modo oscuro
-    </button>
-    
         <button class="btn-campana" onclick="toggleNotificaciones(event)">
             <i class="fa-solid fa-bell"></i>
             <span class="punto-notificacion"></span>
@@ -104,14 +112,14 @@
         </div>
     </div>
 
-    <a href="#" class="activo">
+    <a href="Secretaria.jsp" class="activo">
         <i class="fa-solid fa-house"></i>
         Inicio
     </a>
 
-    <a href="#">
-        <i class="fa-solid fa-solidLarge fa-calendar-days">‌</i>
-        Ver Calendario 
+    <a href="AGENDAR C.jsp">
+        <i class="fa-solid fa-calendar-days"></i>
+        Ver Calendario
     </a>
 
     <a href="#">
@@ -119,8 +127,8 @@
         Especialistas
     </a>
 
-    <a href="#">
-        <i class="fa-solid fa-solidLarge fa-user-large">‌</i>
+    <a href="Paciente_secretaria.jsp">
+        <i class="fa-solid fa-user-large"></i>
         Pacientes
     </a>
 
@@ -133,7 +141,6 @@
 <div class="overlay" id="overlay" onclick="cerrarMenu()"></div>
 
 <main class="contenido-principal" id="contenidoPrincipal">
-     
 
     <section class="resumen">
         <div class="card-resumen">
@@ -165,19 +172,18 @@
                 <p>Cita pendiente</p>
             </div>
         </div>
-
     </section>
-    
+
     <section class="acciones-rapidas">
         <h2>Acciones rápidas</h2>
 
         <div class="grid-acciones">
-            <a href="#" class="accion">
-                <i class="fa-solid fa-solidLarge fa-calendar-days">‌</i>
+            <a href="AGENDAR C.jsp" class="accion">
+                <i class="fa-solid fa-calendar-days"></i>
                 <span>Calendario de Especialistas</span>
             </a>
 
-            <a href="#" class="accion">
+            <a href="RegistrarPaciente.jsp" class="accion">
                 <i class="fa-solid fa-user-plus"></i>
                 <span>Registrar paciente</span>
             </a>
@@ -194,14 +200,15 @@
         <div class="panel">
             <div class="encabezado-panel">
                 <h2>Citas de hoy</h2>
-                <a href="#">Ver todas</a>
+                <a href="Paciente_secretaria.jsp">Ver todas</a>
             </div>
 
             <div class="tabla-contenedor">
                 <table>
                     <thead>
                         <tr>
-                            <th>Hora</th>
+                            <th>Hora inicio</th>
+                            <th>Hora fin</th>
                             <th>Paciente</th>
                             <th>Especialista</th>
                             <th>Estado</th>
@@ -215,14 +222,15 @@
                             <td><%= citasHoy[i][0] %></td>
                             <td><%= citasHoy[i][1] %></td>
                             <td><%= citasHoy[i][2] %></td>
+                            <td><%= citasHoy[i][3] %></td>
                             <td>
-                                <span class="estado <%= citasHoy[i][3].toLowerCase() %>">
-                                    <%= citasHoy[i][3] %>
+                                <span class="estado <%= citasHoy[i][4].toLowerCase() %>">
+                                    <%= citasHoy[i][4] %>
                                 </span>
                             </td>
                             <td>
-                                <a href="#?id=<%= i + 1 %>" class="btn-tabla">
-                                    Ver
+                                <a href="Paciente_secretaria.jsp?editar=<%= generarIdPaciente(citasHoy[i][2]) %>" class="btn-tabla">
+                                    Editar
                                 </a>
                             </td>
                         </tr>
@@ -235,7 +243,6 @@
         <div class="panel">
             <div class="encabezado-panel">
                 <h2>Especialistas</h2>
-                <a href="#">Ver todos</a>
             </div>
 
             <div class="lista-cards">
@@ -257,46 +264,6 @@
             </div>
         </div>
 
-    </section>
-
-    <section class="panel pacientes-panel">
-        <div class="encabezado-panel">
-            <h2>Pacientes recientes</h2>
-            <a href="#">Ver todos los pacientes</a>
-        </div>
-
-        <div class="grid-pacientes">
-            <% for (int i = 0; i < pacientesRecientes.length; i++) { %>
-                <div class="card-paciente">
-                    <div class="paciente-top">
-                        <div class="paciente-avatar">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-
-                        <span class="estado activo-paciente">
-                            <%= pacientesRecientes[i][3] %>
-                        </span>
-                    </div>
-
-                    <h3><%= pacientesRecientes[i][0] %></h3>
-
-                    <p>
-                        <i class="fa-solid fa-id-card"></i>
-                        <%= pacientesRecientes[i][1] %>
-                    </p>
-
-                    <p>
-                        <i class="fa-solid fa-briefcase"></i>
-                        <%= pacientesRecientes[i][2] %>
-                    </p>
-
-                    <div class="botones-paciente">
-                        <a href="#?id=<%= i + 1 %>">Ver</a>
-                        <a href="#?idPaciente=<%= i + 1 %>">Agendar</a>
-                    </div>
-                </div>
-            <% } %>
-        </div>
     </section>
 
 </main>

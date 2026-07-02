@@ -596,3 +596,180 @@
 					padding: 24px 20px;
 					}
 					}
+
+					/* ========================= */
+					/* MODAL EDITAR PACIENTE */
+					/* ========================= */
+					
+					.modal-editar {
+					    display: none;
+					    position: fixed;
+					    inset: 0;
+					    background: rgba(15, 23, 42, 0.65);
+					    z-index: 1000000;
+					    align-items: center;
+					    justify-content: center;
+					    padding: 20px;
+					}
+					
+					.modal-editar.mostrar {
+					    display: flex;
+					}
+					
+					.modal-contenido {
+					    background: white;
+					    color: #111827;
+					    width: 100%;
+					    max-width: 780px;
+					    border-radius: 16px;
+					    padding: 25px;
+					    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+					}
+					
+					.modal-header {
+					    display: flex;
+					    align-items: center;
+					    justify-content: space-between;
+					    margin-bottom: 20px;
+					}
+					
+					.modal-header h2 {
+					    color: #2b6cb0;
+					    margin: 0;
+					}
+					
+					.btn-cerrar-modal {
+					    background: transparent;
+					    border: none;
+					    color: #111827;
+					    font-size: 30px;
+					    cursor: pointer;
+					}
+					
+					.form-grid {
+					    display: grid;
+					    grid-template-columns: repeat(2, 1fr);
+					    gap: 16px;
+					}
+					
+					.form-group {
+					    display: flex;
+					    flex-direction: column;
+					    gap: 7px;
+					}
+					
+					.form-group label {
+					    font-weight: bold;
+					    color: #334155;
+					    font-size: 14px;
+					}
+					
+					.form-group input,
+					.form-group select {
+					    width: 100%;
+					    padding: 12px;
+					    border: 1px solid #b8c7d9;
+					    border-radius: 8px;
+					    background: #f8fbff;
+					    font-size: 14px;
+					    color: #0f172a;
+					}
+					
+					.form-group input:focus,
+					.form-group select:focus {
+					    outline: none;
+					    border-color: #2b6cb0;
+					}
+					
+					.form-full {
+					    grid-column: 1 / -1;
+					}
+					
+					.botones-editor {
+					    display: flex;
+					    justify-content: flex-end;
+					    gap: 12px;
+					    margin-top: 22px;
+					}
+					
+					.btn-guardar-edicion,
+					.btn-cancelar-edicion {
+					    border: none;
+					    padding: 12px 18px;
+					    border-radius: 8px;
+					    font-weight: bold;
+					    cursor: pointer;
+					}
+					
+					.btn-guardar-edicion {
+					    background: #16a34a;
+					    color: white;
+					}
+					
+					.btn-guardar-edicion:hover {
+					    background: #15803d;
+					}
+					
+					.btn-cancelar-edicion {
+					    background: #e5e7eb;
+					    color: #111827;
+					}
+					
+					.btn-cancelar-edicion:hover {
+					    background: #d1d5db;
+					}
+					
+					/* MODO OSCURO */
+					
+					body.modo-oscuro .modal-contenido {
+					    background: #1e293b;
+					    color: #e5e7eb;
+					}
+					
+					body.modo-oscuro .modal-header h2 {
+					    color: #60a5fa;
+					}
+					
+					body.modo-oscuro .btn-cerrar-modal {
+					    color: #e5e7eb;
+					}
+					
+					body.modo-oscuro .form-group label {
+					    color: #f8fafc;
+					}
+					
+					body.modo-oscuro .form-group input,
+					body.modo-oscuro .form-group select {
+					    background: #111827;
+					    color: #e5e7eb;
+					    border: 1px solid #334155;
+					}
+					
+					body.modo-oscuro .form-group select option {
+					    background: #111827;
+					    color: #e5e7eb;
+					}
+					
+					body.modo-oscuro .btn-cancelar-edicion {
+					    background: #334155;
+					    color: #e5e7eb;
+					}
+					
+					body.modo-oscuro .btn-cancelar-edicion:hover {
+					    background: #475569;
+					}
+					
+					@media (max-width: 700px) {
+					    .form-grid {
+					        grid-template-columns: 1fr;
+					    }
+					
+					    .botones-editor {
+					        flex-direction: column;
+					    }
+					
+					    .btn-guardar-edicion,
+					    .btn-cancelar-edicion {
+					        width: 100%;
+					    }
+					}
