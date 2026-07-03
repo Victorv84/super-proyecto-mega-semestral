@@ -20,11 +20,12 @@ boolean sesionIniciada = usuario != null && "cliente".equals(rol);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="estilos_Cliente.css">
   <link rel="stylesheet" href="../ModoOscuro.css">
+  <%@ page import="java.sql.*"%>
+  <%@ page import="java.time.*" %>
+  <%@ page import="java.time.format.DateTimeFormatter" %>
 </head>
 
 <body>
-
-  <!-- HEADER -->
 
   <header>
 
@@ -61,7 +62,7 @@ boolean sesionIniciada = usuario != null && "cliente".equals(rol);
     <div class="header-derecha header-acciones">
 
     <button type="button" class="btn-modo" id="btnModo" onclick="toggleModoOscuro()">
-        🌙 Modo oscuro
+        🌙
     </button>
 
     <% if(!sesionIniciada){ %>
@@ -109,12 +110,12 @@ boolean sesionIniciada = usuario != null && "cliente".equals(rol);
 
 </aside>
 
-  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+   <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
 
   <!-- CONTENIDO -->
 
   <div class="container" id="menuPrincipal">
-
+	<h2 style="position:absolute; left:50%; transform:translateX(-50%); auto">Actividades</h2><br><br><br>
     <div class="search-box" id="barraBusqueda">
       <input 
   type="text" 
@@ -126,155 +127,58 @@ boolean sesionIniciada = usuario != null && "cliente".equals(rol);
   <i class="fa-solid fa-magnifying-glass"></i>
 </button>
     </div>
-
-    <div class="grid">
-
-      <!-- ACTIVIDAD 1 -->
-      <div class="card flip-card" onclick="flipActividad(this)">
-
-        <div class="flip-inner">
-
-          <!-- FRENTE -->
-          <div class="flip-front">
-
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
-
-            <div class="card-content">
-
-              <h3>Taller de Ansiedad</h3>
-
-              <p><strong>Fecha:</strong> 25 Mayo 2026</p>
-
-              <p><strong>Cupos:</strong> 5</p>
-
-              <p class="flip-ayuda">Haz clic para ver detalles</p>
-
-            </div>
-
-          </div>
-
-          <!-- ATRÁS -->
-          <div class="flip-back">
-
-            <div>
-
-              <h3>Taller de Ansiedad</h3>
-
-              <p><strong>Lugar:</strong> Salón 204 - UTP Central</p>
-              <p><strong>Día:</strong> Lunes 25 Mayo 2026</p>
-              <p><strong>Hora:</strong> 10:00 a.m.</p>
-              <p><strong>Descripción:</strong> Taller enfocado en técnicas básicas para identificar, comprender y manejar la ansiedad en la vida académica.</p>
-              <p><strong>Cupos disponibles:</strong> 5</p>
-
-            </div>
-
-            <button type="button" class="btn-inscribir-card" onclick="inscribirseActividad(event, 'Taller de Ansiedad')">
-              Inscribirse Actividad
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- ACTIVIDAD 2 -->
-      <div class="card flip-card" onclick="flipActividad(this)">
-
-        <div class="flip-inner">
-
-          <!-- FRENTE -->
-          <div class="flip-front">
-
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
-
-            <div class="card-content">
-
-              <h3>Manejo del Estrés</h3>
-
-              <p><strong>Fecha:</strong> 27 Mayo 2026</p>
-
-              <p><strong>Cupos:</strong> 8</p>
-
-              <p class="flip-ayuda">Haz clic para ver detalles</p>
-
-            </div>
-
-          </div>
-
-          <!-- ATRÁS -->
-          <div class="flip-back">
-
-            <div>
-
-              <h3>Manejo del Estrés</h3>
-
-              <p><strong>Lugar:</strong> Auditorio principal</p>
-              <p><strong>Día:</strong> Miércoles 27 Mayo 2026</p>
-              <p><strong>Hora:</strong> 2:00 p.m.</p>
-              <p><strong>Descripción:</strong> Actividad práctica para aprender herramientas de organización, respiración y control emocional ante cargas académicas.</p>
-              <p><strong>Cupos disponibles:</strong> 8</p>
-
-            </div>
-
-            <button type="button" class="btn-inscribir-card" onclick="inscribirseActividad(event, 'Manejo del Estrés')">
-              Inscribirse Actividad
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- ACTIVIDAD 3 -->
-      <div class="card flip-card" onclick="flipActividad(this)">
-
-        <div class="flip-inner">
-
-          <!-- FRENTE -->
-          <div class="flip-front">
-
-            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
-
-            <div class="card-content">
-
-              <h3>Charla Motivacional</h3>
-
-              <p><strong>Fecha:</strong> 30 Mayo 2026</p>
-
-              <p><strong>Cupos:</strong> 10</p>
-
-              <p class="flip-ayuda">Haz clic para ver detalles</p>
-
-            </div>
-
-          </div>
-
-          <!-- ATRÁS -->
-          <div class="flip-back">
-
-            <div>
-
-              <h3>Charla Motivacional</h3>
-
-              <p><strong>Lugar:</strong> Biblioteca - Sala de conferencias</p>
-              <p><strong>Día:</strong> Sábado 30 Mayo 2026</p>
-              <p><strong>Hora:</strong> 9:00 a.m.</p>
-              <p><strong>Descripción:</strong> Charla orientada a fortalecer la motivación personal, la confianza y la constancia durante el semestre.</p>
-              <p><strong>Cupos disponibles:</strong> 10</p>
-
-            </div>
-
-            <button type="button" class="btn-inscribir-card" onclick="inscribirseActividad(event, 'Charla Motivacional')">
-              Inscribirse Actividad
-            </button>
-
-          </div>
-
-        </div>
-
-      </div>
+    
+    <div class="grid"> 
+		<% //Esta sección es para mostrar todas las actividades actualmente existentes en la base de datos
+	    Class.forName("com.mysql.jdbc.Driver");
+	    Connection dbconect = DriverManager.getConnection("jdbc:mysql://localhost:3306/psireg","root", "");
+	    Statement dbstatement = dbconect.createStatement();
+	    ResultSet act = dbstatement.executeQuery("select * from actividades");
+	    String imagen;
+	    String titulo;
+	    String fecha;
+	    String hora;
+	    String cupos;
+	    String lugar;
+	    String desc;
+	    DateTimeFormatter df = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	    while(act.next()) {
+	    	imagen = act.getString("act_imagenUrl");
+	    	titulo = act.getString("act_titulo");
+	    	fecha = act.getString("act_fecha");
+	    	hora = act.getString("act_hora");
+	    	cupos = String.valueOf(act.getInt("act_cuposMax"));
+	    	lugar = act.getString("act_lugar");
+	    	desc = act.getString("act_descripcion");
+	    	
+	    	out.println("<div class='card flip-card' onclick='flipActividad(this)'>"+
+	    	        "<div class='flip-inner'>"+
+	    	          "<div class='flip-front'>"+
+	    	            "<img src="+imagen+">"+
+	    	            "<div class='card-content'>"+
+	    	              "<h3>"+titulo+"</h3>"+
+	    	              "<p><strong>Fecha:</strong> "+fecha+"</p>"+
+	    	              "<p><strong>Cupos:</strong> "+cupos+"</p>"+
+	    	              "<p class='flip-ayuda'>Haz clic para ver detalles</p>"+
+	    	            "</div>"+
+	    	          "</div>"+
+	    	          "<div class='flip-back'>"+
+	    	            "<div>"+
+	    	              "<h3>"+titulo+"</h3>"+
+	    	              "<p><strong>Lugar:</strong> "+lugar+"</p>"+
+	    	              "<p><strong>Día:</strong> "+fecha+"</p>"+
+	    	              "<p><strong>Hora:</strong> "+hora.substring(0, Math.min(hora.length(),5))+"</p>"+
+	    	              "<p><strong>Descripción:</strong> "+desc+"</p>"+
+	    	              "<p><strong>Cupos disponibles:</strong> "+cupos+"</p>"+
+	    	            "</div>"+
+	    	            "<button type='button' class='btn-inscribir-card' onclick='inscribirseActividad(event, \"Taller de Ansiedad\")'>"+
+	    	              "Inscribirse Actividad"+
+	    	            "</button>"+
+	    	          "</div>"+
+	    	        "</div>"+
+	    	      "</div>");
+	    }
+		%>
 
     </div>
 
